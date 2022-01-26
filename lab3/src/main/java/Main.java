@@ -23,7 +23,7 @@ public class Main {
             {{"3", "1", "L"}, {"2", "0", "L"}, {"-", "-", "-"}},
             {{"1", "0", "L"}, {"1", "1", "L"}, {"-", "-", "-"}},
             {{"4", "0", "L"}, {"4", "1", "L"}, {"-", "-", "-"}},
-            {{"1", "1", "L"}, {"3", "0", "L"}, {"1", "1", "-"}},
+            {{"1", "1", "L"}, {"4", "0", "L"}, {"-", "-", "-"}},
             {{"1", "1", "L"}, {"4", "0", "L"}, {"1", "1", "-"}}
     };
 
@@ -131,11 +131,9 @@ public class Main {
         String tapeMovementValue = nextStateValues[2];
         currentTapeIndex = getNewTapeIndex(tapeMovementValue, currentTapeIndex);
         String nextStateValue = nextStateValues[0];
-        int nextState;
+        int nextState = currentState;
         if (!nextStateValue.equals("-")) {
             nextState = Integer.parseInt(nextStateValue);
-        } else {
-            nextState = currentState;
         }
         displayState(currentState, currentTapeValue, nextState, valueToPlace, tapeMovementValue);
         if (!currentTapeValue.equals("θ")) {
